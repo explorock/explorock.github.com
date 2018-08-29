@@ -6,7 +6,7 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
+        <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
@@ -23,7 +23,7 @@
         <div id="map">
         </div>
         <script src="js/qgis2web_expressions.js"></script>
-        <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
+        <script src="js/leaflet.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -32,14 +32,16 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/Fallas_0.js"></script>
+        <script src="data/Grandes_fallas_0.js"></script>
+        <script src="data/Mapaprovincial_1.js"></script>
+        <script src="data/Mapaterritorial_2.js"></script>
+        <script src="data/Geocronologa_3.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-10.8893231214,-77.1338025064],[-10.2062871182,-76.105650563]]);
+        }).fitBounds([[-19.0014328795,-88.2979200141],[0.226823280895,-54.6215564811]]);
         var hash = new L.Hash(map);
         map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
-        L.control.locate().addTo(map);
         var measureControl = new L.Control.Measure({
             primaryLengthUnit: 'meters',
             secondaryLengthUnit: 'kilometers',
@@ -48,27 +50,21 @@
         });
         measureControl.addTo(map);
         var bounds_group = new L.featureGroup([]);
-        var basemap0 = L.tileLayer('http://a.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
-            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>,<a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash;Map data: &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+        var basemap0 = L.tileLayer('http://stamen-tiles-a.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}.png', {
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
             maxZoom: 28
         });
         basemap0.addTo(map);
         function setBounds() {
         }
-        function pop_Fallas_0(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Id'] !== null ? Autolinker.link(String(feature.properties['Id'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+        function pop_Grandes_fallas_0(feature, layer) {
         }
 
-        function style_Fallas_0_0() {
+        function style_Grandes_fallas_0_0() {
             return {
-                pane: 'pane_Fallas_0',
+                pane: 'pane_Grandes_fallas_0',
                 opacity: 1,
-                color: 'rgba(2,7,0,1.0)',
+                color: 'rgba(2,3,1,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -76,19 +72,109 @@
                 fillOpacity: 0,
             }
         }
-        map.createPane('pane_Fallas_0');
-        map.getPane('pane_Fallas_0').style.zIndex = 400;
-        map.getPane('pane_Fallas_0').style['mix-blend-mode'] = 'normal';
-        var layer_Fallas_0 = new L.geoJson(json_Fallas_0, {
+        map.createPane('pane_Grandes_fallas_0');
+        map.getPane('pane_Grandes_fallas_0').style.zIndex = 400;
+        map.getPane('pane_Grandes_fallas_0').style['mix-blend-mode'] = 'normal';
+        var layer_Grandes_fallas_0 = new L.geoJson(json_Grandes_fallas_0, {
             attribution: '<a href=""></a>',
-            pane: 'pane_Fallas_0',
-            onEachFeature: pop_Fallas_0,
-            style: style_Fallas_0_0,
+            pane: 'pane_Grandes_fallas_0',
+            onEachFeature: pop_Grandes_fallas_0,
+            style: style_Grandes_fallas_0_0,
         });
-        bounds_group.addLayer(layer_Fallas_0);
-        map.addLayer(layer_Fallas_0);
+        bounds_group.addLayer(layer_Grandes_fallas_0);
+        function pop_Mapaprovincial_1(feature, layer) {
+        }
+
+        function style_Mapaprovincial_1_0() {
+            return {
+                pane: 'pane_Mapaprovincial_1',
+                opacity: 1,
+                color: 'rgba(176,176,176,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(82,144,124,0.0)',
+            }
+        }
+        map.createPane('pane_Mapaprovincial_1');
+        map.getPane('pane_Mapaprovincial_1').style.zIndex = 401;
+        map.getPane('pane_Mapaprovincial_1').style['mix-blend-mode'] = 'normal';
+        var layer_Mapaprovincial_1 = new L.geoJson(json_Mapaprovincial_1, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Mapaprovincial_1',
+            onEachFeature: pop_Mapaprovincial_1,
+            style: style_Mapaprovincial_1_0,
+        });
+        bounds_group.addLayer(layer_Mapaprovincial_1);
+        map.addLayer(layer_Mapaprovincial_1);
+        function pop_Mapaterritorial_2(feature, layer) {
+        }
+
+        function style_Mapaterritorial_2_0() {
+            return {
+                pane: 'pane_Mapaterritorial_2',
+                opacity: 1,
+                color: 'rgba(176,176,176,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(218,21,123,0.0)',
+            }
+        }
+        map.createPane('pane_Mapaterritorial_2');
+        map.getPane('pane_Mapaterritorial_2').style.zIndex = 402;
+        map.getPane('pane_Mapaterritorial_2').style['mix-blend-mode'] = 'normal';
+        var layer_Mapaterritorial_2 = new L.geoJson(json_Mapaterritorial_2, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Mapaterritorial_2',
+            onEachFeature: pop_Mapaterritorial_2,
+            style: style_Mapaterritorial_2_0,
+        });
+        bounds_group.addLayer(layer_Mapaterritorial_2);
+        map.addLayer(layer_Mapaterritorial_2);
+        function pop_Geocronologa_3(feature, layer) {
+        }
+
+        function style_Geocronologa_3_0() {
+            return {
+                pane: 'pane_Geocronologa_3',
+                radius: 2.4,
+                opacity: 1,
+                color: 'rgba(149,149,149,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(218,244,98,1.0)',
+            }
+        }
+        map.createPane('pane_Geocronologa_3');
+        map.getPane('pane_Geocronologa_3').style.zIndex = 403;
+        map.getPane('pane_Geocronologa_3').style['mix-blend-mode'] = 'normal';
+        var layer_Geocronologa_3 = new L.geoJson(json_Geocronologa_3, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Geocronologa_3',
+            onEachFeature: pop_Geocronologa_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Geocronologa_3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Geocronologa_3);
+        map.addLayer(layer_Geocronologa_3);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Fallas_0.png" /> Fallas': layer_Fallas_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Geocronologa_3.png" /> Geocronología': layer_Geocronologa_3,'<img src="legend/Mapaterritorial_2.png" /> Mapa territorial': layer_Mapaterritorial_2,'<img src="legend/Mapaprovincial_1.png" /> Mapa provincial': layer_Mapaprovincial_1,'<img src="legend/Grandes_fallas_0.png" /> Grandes_fallas': layer_Grandes_fallas_0,}).addTo(map);
         setBounds();
         </script>
     </body>
