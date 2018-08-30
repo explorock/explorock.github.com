@@ -142,7 +142,7 @@
 	float: right;
 	}
 .leaflet-top .leaflet-control {
-	margin-top: 10px;
+	margin-top: 18px;
 	}
 .leaflet-bottom .leaflet-control {
 	margin-bottom: 10px;
@@ -258,7 +258,7 @@
 
 /* general typography */
 .leaflet-container {
-	font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font: 13px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
 	}
 
 
@@ -336,10 +336,18 @@
 .leaflet-control-layers {
 	box-shadow: 0 1px 5px rgba(0,0,0,0.4);
 	background: #fff;
-	border-radius: 5px;
+	border-radius: 12px;
 	}
 .leaflet-control-layers-toggle {
-	background-image: url(images/layers.png);
+	background-image: url(images/layers2.png);
+
+	width: 36px;
+	height: 36px;
+	}
+	
+	.leaflet-control-layers-toggle {
+	background-image: url(images/layers2.png);
+
 	width: 36px;
 	height: 36px;
 	}
@@ -360,9 +368,9 @@
 	position: relative;
 	}
 .leaflet-control-layers-expanded {
-	padding: 6px 10px 6px 6px;
-	color: #333;
-	background: #fff;
+	padding: 7px 10px 7px 10px;
+	color: #222;
+	background: #f7f7f2;
 	}
 .leaflet-control-layers-scrollbar {
 	overflow-y: scroll;
@@ -388,6 +396,7 @@
 	background-image: url(images/marker-icon.png);
 	}
 
+	
 
 /* attribution and scale controls */
 
