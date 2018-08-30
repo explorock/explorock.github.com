@@ -41,7 +41,7 @@
             zoomControl:true, maxZoom:28, minZoom:1
         }).fitBounds([[-19.0014328795,-88.2979200141],[0.226823280895,-54.6215564811]]);
         var hash = new L.Hash(map);
-        map.attributionControl.addAttribution('© 2018 Explorock SAC Soluciones Geológicas</a>');
+        map.attributionControl.addAttribution('©2018 Explorock Soluciones Geológicas</a>');
         var measureControl = new L.Control.Measure({
             primaryLengthUnit: 'meters',
             secondaryLengthUnit: 'kilometers',
@@ -51,7 +51,7 @@
         measureControl.addTo(map);
         var bounds_group = new L.featureGroup([]);
         var basemap0 = L.tileLayer('http://stamen-tiles-a.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}.png', {
-            attribution: '<a href="https://www.explorock.com">ver especificaciones,</a> Lima-Perú</a>',
+            attribution: '<a href="https://www.explorock.com/gofault-especificaciones-y-condiciones-de-uso/">GoFault®</a> Lima-Perú</a>',
             maxZoom: 28
         });
         basemap0.addTo(map);
